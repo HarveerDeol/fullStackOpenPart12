@@ -1,0 +1,27 @@
+Script started on Thu Jul 10 10:44:24 2025
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ docker run -it ubuntu bash
+[?2004h]0;root@b6c0f3162624: /root@b6c0f3162624:/# 
+[?2004l[?2004h]0;root@b6c0f3162624: /root@b6c0f3162624:/# [7mdocker container run -it ubuntu bash[27mdocker container run -it ubuntu bash
+[?2004lbash: docker: command not found
+[?2004h]0;root@b6c0f3162624: /root@b6c0f3162624:/# [K[7mdocker container run -it ubuntu bash[27mdocker container run -it ubuntu bash
+[?2004lbash: docker: command not found
+[?2004h]0;root@b6c0f3162624: /root@b6c0f3162624:/# [Kmkdir usr
+[?2004lmkdir: cannot create directory 'usr': File exists
+[?2004h]0;root@b6c0f3162624: /root@b6c0f3162624:/# cd usr
+[?2004l[?2004h]0;root@b6c0f3162624: /usrroot@b6c0f3162624:/usr# mkdir src
+[?2004lmkdir: cannot create directory 'src': File exists
+[?2004h]0;root@b6c0f3162624: /usrroot@b6c0f3162624:/usr# cd src
+[?2004l[?2004h]0;root@b6c0f3162624: /usr/srcroot@b6c0f3162624:/usr/src# mkdir app
+[?2004l[?2004h]0;root@b6c0f3162624: /usr/srcroot@b6c0f3162624:/usr/src# cd app
+[?2004l[?2004h]0;root@b6c0f3162624: /usr/src/approot@b6c0f3162624:/usr/src/app# tocuh     uch index.js
+[?2004l[?2004h]0;root@b6c0f3162624: /usr/src/approot@b6c0f3162624:/usr/src/app# --help
+[?2004lbash: --help: command not found
+[?2004h]0;root@b6c0f3162624: /usr/src/approot@b6c0f3162624:/usr/src/app# [7mdocker container run --help[27mdocker container run --help
+[?2004lbash: docker: command not found
+[?2004h]0;root@b6c0f3162624: /usr/src/approot@b6c0f3162624:/usr/src/app# exit
+[?2004lexit
+bash-3.2$ 
