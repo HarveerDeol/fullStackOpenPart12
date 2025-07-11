@@ -6,4 +6,4 @@ COPY . .
 
 RUN npm install
 
-CMD node run start
+CMD npm run start
