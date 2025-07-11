@@ -1,6 +1,8 @@
 const express = require('express');
 const { Todo } = require('../mongo')
 const router = express.Router();
+const{ getAsync, setAsync } = require('../redis')
+
 
 /* GET todos listing. */
 router.get('/', async (_, res) => {
@@ -22,12 +24,16 @@ router.put("/:id", async (request, response, next) => {
     todo.done = done;
 
     await todo.save();
+    const current = await getAsync('added_todos');
+    const count = current ? parseInt(current) + 1 : 1;
+    await setAsync('added_todos', count);
     response.json(todo);
   } catch (error) {
     next(error);
     console.log("No change occured");
   }
 });
+
 
 /* POST todo to listing. */
 router.post('/', async (req, res) => {
