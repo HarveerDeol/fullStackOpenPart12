@@ -8,6 +8,27 @@ router.get('/', async (_, res) => {
   res.send(todos);
 });
 
+router.get('/:id', async (req, res) => {
+  const todo = await Todo.findById(req.params.id)
+  res.send(todo);
+});
+
+router.put("/:id", async (request, response, next) => {
+  const { text, done } = request.body;
+  try {
+    const todo = await Todo.findById(request.params.id);
+
+    todo.text = text;
+    todo.done = done;
+
+    await todo.save();
+    response.json(todo);
+  } catch (error) {
+    next(error);
+    console.log("No change occured");
+  }
+});
+
 /* POST todo to listing. */
 router.post('/', async (req, res) => {
   const todo = await Todo.create({
@@ -44,6 +65,7 @@ singleRouter.put('/', async (req, res) => {
 });
 
 router.use('/:id', findByIdMiddleware, singleRouter)
+
 
 
 module.exports = router;
